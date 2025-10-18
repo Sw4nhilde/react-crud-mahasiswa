@@ -1,38 +1,158 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
   text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Styling Form */
+.student-form {
+  padding: 1.5rem;
+  background-color: #fdfdfd;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.student-form h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #34495e;
+}
+
+.student-form input {
+  width: 95%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.student-form input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.student-form button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.student-form button[type='submit'] {
+  background-color: #2ecc71;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.student-form button[type='submit']:hover {
+  background-color: #27ae60;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.student-form button[type='button'] {
+  background-color: #e74c3c;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.student-form button[type='button']:hover {
+  background-color: #c0392b;
+}
+
+/* Styling Tabel / List */
+.student-list {
+  padding: 1.5rem;
+  background-color: #fdfdfd;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow-x: auto; /* Agar responsif jika tabel terlalu lebar */
+}
+
+.student-list h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #34495e;
+}
+
+.student-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.student-list th,
+.student-list td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.student-list th {
+  background-color: #ecf0f1;
+  color: #34495e;
+}
+
+.student-list tr:hover {
+  background-color: #f9f9f9;
+}
+
+.student-list .actions button {
+  margin-right: 5px;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.student-list .actions button:first-of-type {
+  background-color: #3498db;
+  color: white;
+}
+.student-list .actions button:first-of-type:hover {
+  background-color: #2980b9;
+}
+
+.student-list .actions button:last-of-type {
+  background-color: #e74c3c;
+  color: white;
+}
+.student-list .actions button:last-of-type:hover {
+  background-color: #c0392b;
+}
+
+/* Layout untuk layar kecil (Mobile) */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr; /* Stack form dan tabel */
   }
 }
